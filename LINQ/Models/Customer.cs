@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LINQ.Models
+﻿namespace LINQ.Models
 {
     public class Customer
     {
@@ -31,6 +25,30 @@ namespace LINQ.Models
             {
                 CustomerDto other = (CustomerDto)obj;
                 return (CustomerId.Equals(other.CustomerId) && OrderCount == other.OrderCount);
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public override int GetHashCode()
+        {
+            return CustomerId.GetHashCode();
+        }
+    }
+
+    public class CustomerOrderDto
+    {
+        public string CustomerId { get; set; }
+        public int OrderId { get; set; }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is CustomerOrderDto)
+            {
+                CustomerOrderDto other = (CustomerOrderDto)obj;
+                return (CustomerId.Equals(other.CustomerId) && OrderId == other.OrderId);
             }
             else
             {

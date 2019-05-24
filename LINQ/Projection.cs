@@ -1,7 +1,6 @@
 ﻿using LINQ.Data;
 using LINQ.Models;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace LINQ
 {
@@ -58,7 +57,7 @@ namespace LINQ
 
             // !!! INSERT YOUR LINQ  MAGIC HERE !!!
             // Create LINQ query and replace anonymousItems array with its results
-            // Results should be anonymous types with string Upper and string Lower properties
+            // Results should be anonymous types with properties: string Upper, string Lower
             dynamic[] anonymousItems = { new { Upper = string.Empty, Lower = string.Empty } };
             foreach (dynamic item in anonymousItems)
             {
@@ -77,7 +76,7 @@ namespace LINQ
 
             // !!! INSERT YOUR LINQ  MAGIC HERE !!!
             // Create LINQ query and replace anonymousItems array with its results
-            // Results should be anonymous types with string Digit and bool Even properties
+            // Results should be anonymous types with properties: string Digit, bool Even
             dynamic[] anonymousItems = { new { Digit = string.Empty, Even = false } };
             foreach (dynamic item in anonymousItems)
             {
@@ -95,7 +94,7 @@ namespace LINQ
 
             // !!! INSERT YOUR LINQ  MAGIC HERE !!!
             // Create LINQ query and replace anonymousItems array with its results
-            // Results should be anonymous types with int Digit and bool InPlace properties
+            // Results should be anonymous types with properties: int Digit, bool InPlace
             dynamic[] anonymousItems = { new { Digit = -1, InPlace = false } };
             foreach (dynamic item in anonymousItems)
             {
@@ -120,19 +119,14 @@ namespace LINQ
         /// <summary>
         /// Returns sequence containing customers from Washington (WA) region and IDs of their orders placed on or after 1.1.1997.
         /// </summary>
-        /// <returns>Output for each item in following format: "CustomerID={item.CustomerId} OrderID={item.OrderId}"</returns>
-        public static IEnumerable<string> SelectMany()
+        /// <returns>Collection with customers from Washington (WA) region and IDs of their orders placed on or after 1.1.1997.</returns>
+        public static IEnumerable<CustomerOrderDto> SelectMany()
         {
             List<Customer> customers = DataLoader.GetCustomerList();
 
-            // !!! INSERT YOUR LINQ  MAGIC HERE !!!
-            // Create LINQ query and replace anonymousItems array with its results
-            // Results should be anonymous types with string CustomerId and int OrderId properties
-            dynamic[] anonymousItems = { new { CustomerId = string.Empty, OrderId = -1 } };
-            foreach (dynamic item in anonymousItems)
-            {
-                yield return $"CustomerID={item.CustomerId} OrderID={item.OrderId}";
-            }
+            // !!! INSERT YOUR LINQ  MAGIC HERE !!!            
+
+            return new CustomerOrderDto[] { };
         }
     }
 }

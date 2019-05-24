@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using LINQ;
+﻿using LINQ;
+using LINQ.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace LinqTests
 {
@@ -122,26 +123,26 @@ namespace LinqTests
         [TestMethod]
         public void TestSelectMany()
         {
-            IEnumerable<string> actual = Projection.SelectMany();
-            IEnumerable<string> expected =
-                new string[] {
-                    "CustomerID=LAZYK OrderID=10482",
-                    "CustomerID=LAZYK OrderID=10545",
-                    "CustomerID=TRAIH OrderID=10574",
-                    "CustomerID=TRAIH OrderID=10577",
-                    "CustomerID=TRAIH OrderID=10822",
-                    "CustomerID=WHITC OrderID=10469",
-                    "CustomerID=WHITC OrderID=10483",
-                    "CustomerID=WHITC OrderID=10504",
-                    "CustomerID=WHITC OrderID=10596",
-                    "CustomerID=WHITC OrderID=10693",
-                    "CustomerID=WHITC OrderID=10696",
-                    "CustomerID=WHITC OrderID=10723",
-                    "CustomerID=WHITC OrderID=10740",
-                    "CustomerID=WHITC OrderID=10861",
-                    "CustomerID=WHITC OrderID=10904",
-                    "CustomerID=WHITC OrderID=11032",
-                    "CustomerID=WHITC OrderID=11066"
+            IEnumerable<CustomerOrderDto> actual = Projection.SelectMany();
+            IEnumerable<CustomerOrderDto> expected =
+                new CustomerOrderDto[] {
+                    new CustomerOrderDto() { CustomerId = "LAZYK", OrderId=10482 },
+                    new CustomerOrderDto() { CustomerId = "LAZYK", OrderId=10545 },
+                    new CustomerOrderDto() { CustomerId = "TRAIH", OrderId=10574 },
+                    new CustomerOrderDto() { CustomerId = "TRAIH", OrderId=10577 },
+                    new CustomerOrderDto() { CustomerId = "TRAIH", OrderId=10822 },
+                    new CustomerOrderDto() { CustomerId = "WHITC", OrderId=10469 },
+                    new CustomerOrderDto() { CustomerId = "WHITC", OrderId=10483 },
+                    new CustomerOrderDto() { CustomerId = "WHITC", OrderId=10504 },
+                    new CustomerOrderDto() { CustomerId = "WHITC", OrderId=10596 },
+                    new CustomerOrderDto() { CustomerId = "WHITC", OrderId=10693 },
+                    new CustomerOrderDto() { CustomerId = "WHITC", OrderId=10696 },
+                    new CustomerOrderDto() { CustomerId = "WHITC", OrderId=10723 },
+                    new CustomerOrderDto() { CustomerId = "WHITC", OrderId=10740 },
+                    new CustomerOrderDto() { CustomerId = "WHITC", OrderId=10861 },
+                    new CustomerOrderDto() { CustomerId = "WHITC", OrderId=10904 },
+                    new CustomerOrderDto() { CustomerId = "WHITC", OrderId=11032 },
+                    new CustomerOrderDto() { CustomerId = "WHITC", OrderId=11066 }
                 };
 
             CollectionAssert.AreEqual(actual.ToList(), expected.ToList(), "You failed!");

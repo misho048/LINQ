@@ -56,6 +56,7 @@
     <Compile Include="PartitioningTest.cs" />
     <Compile Include="OrderingTest.cs" />
     <Compile Include="GroupingTest.cs" />
+    <Compile Include="SetOperatorsTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -58,6 +58,7 @@
     <Compile Include="GroupingTest.cs" />
     <Compile Include="SetOperatorsTest.cs" />
     <Compile Include="ConversionTest.cs" />
+    <Compile Include="ElementOperatorTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

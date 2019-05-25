@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Conversion.cs" />
     <Compile Include="Data\Data.cs" />
+    <Compile Include="ElementOperators.cs" />
     <Compile Include="Filtering.cs" />
     <Compile Include="Grouping.cs" />
     <Compile Include="Models\Customer.cs" />

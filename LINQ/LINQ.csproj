@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AggregateOperators.cs" />
     <Compile Include="Conversion.cs" />
     <Compile Include="Data\Data.cs" />
     <Compile Include="ElementOperators.cs" />

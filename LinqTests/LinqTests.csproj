@@ -60,6 +60,7 @@
     <Compile Include="ConversionTest.cs" />
     <Compile Include="ElementOperatorTest.cs" />
     <Compile Include="QuantifiersTest.cs" />
+    <Compile Include="AggregateOperatorsTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

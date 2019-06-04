@@ -13,9 +13,7 @@ namespace LINQ
         {
             List<double> doubles = new List<double> { 1.7, 2.3, 1.9, 4.1, 2.9 };
 
-            // !!! INSERT YOUR LINQ  MAGIC HERE !!!            
-
-            return new double[] { };
+            return doubles.OrderByDescending(d => d).ToArray();
         }
 
         /// <summary>
@@ -25,10 +23,7 @@ namespace LINQ
         public static List<string> ToList()
         {
             string[] words = { "cherry", "apple", "blueberry" };
-
-            // !!! INSERT YOUR LINQ  MAGIC HERE !!!
-            
-            return new List<string>();
+            return words.OrderBy(w => w).ToList();
         }
 
         /// <summary>
@@ -40,10 +35,7 @@ namespace LINQ
             var scoreRecords = new[] { new {Name = "Alice", Score = 50},
                                        new {Name = "Bob"  , Score = 40},
                                        new {Name = "Cathy", Score = 45} };
-
-            // !!! INSERT YOUR LINQ  MAGIC HERE !!!
-            
-            return new Dictionary<string, int>();
+            return scoreRecords.ToDictionary(s => s.Name, v => v.Score);
         }
 
         /// <summary>
@@ -53,10 +45,7 @@ namespace LINQ
         public static IEnumerable<double> OfType()
         {
             object[] numbers = { null, 1.0, "two", 3, "four", 5, "six", 7.0 };
-
-            // !!! INSERT YOUR LINQ  MAGIC HERE !!!
-            
-            return new double[] { };
+            return numbers.OfType<double>();
         }
     }
 }

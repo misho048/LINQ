@@ -15,9 +15,8 @@ namespace LINQ
         {
             List<Product> products = DataLoader.GetProductList();
 
-            // !!! INSERT YOUR LINQ  MAGIC HERE !!!            
-            
-            return null;
+
+            return products.First(p => p.Category.Equals("Confections"));
         }
 
         /// <summary>
@@ -28,9 +27,7 @@ namespace LINQ
         {
             string[] strings = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
 
-            // !!! INSERT YOUR LINQ  MAGIC HERE !!!            
-            
-            return string.Empty;
+            return strings.First(s => s[0]=='o');
         }
 
         /// <summary>
@@ -40,10 +37,8 @@ namespace LINQ
         public static int FirstOrDefault01()
         {
             int[] numbers = { };
-
-            // !!! INSERT YOUR LINQ  MAGIC HERE !!!            
+            return numbers.FirstOrDefault();
             
-            return 42;
         }
 
         /// <summary>
@@ -53,10 +48,7 @@ namespace LINQ
         public static Product FirstOrDefault02()
         {
             List<Product> products = DataLoader.GetProductList();
-
-            // !!! INSERT YOUR LINQ  MAGIC HERE !!!            
-            
-            return new Product();
+            return products.FirstOrDefault(p => p.ProductID == 789);
         }
 
         /// <summary>
@@ -65,11 +57,11 @@ namespace LINQ
         /// <returns>Second number greater than 5 from an array.</returns>
         public static int ElementAt()
         {
-            int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            int[] numbers = { 5, 4, 5, 3, 9, 8, 6, 7, 2, 0 };
 
-            // !!! INSERT YOUR LINQ  MAGIC HERE !!!            
-            
-            return 42;
+            return numbers.Where(n => n > 5)
+                          .ElementAt(1);
+                            
         }
     }
 }

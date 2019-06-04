@@ -15,10 +15,7 @@ namespace LINQ
         public static IEnumerable<int> Where01()
         {
             int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
-
-            // !!! INSERT YOUR LINQ  MAGIC HERE !!!
-
-            return new int[] { };
+            return numbers.Where(n => n < 5);
         }
 
         /// <summary>
@@ -28,10 +25,7 @@ namespace LINQ
         public static IEnumerable<Product> Where02()
         {
             List<Product> products = DataLoader.GetProductList();
-
-            // !!! INSERT YOUR LINQ  MAGIC HERE !!!
-
-            return new Product[] { };
+            return products.Where(p => p.UnitsInStock == 0);
         }
 
         /// <summary>
@@ -41,10 +35,7 @@ namespace LINQ
         public static IEnumerable<Product> Where03()
         {
             List<Product> products = DataLoader.GetProductList();
-
-            // !!! INSERT YOUR LINQ  MAGIC HERE !!!
-
-            return new Product[] { };
+            return products.Where(p=> p.UnitsInStock>0 && p.UnitPrice>3);
         }
 
         /// <summary>
@@ -55,10 +46,14 @@ namespace LINQ
         {
             List<Customer> customers = DataLoader.GetCustomerList();
 
-            // !!! INSERT YOUR LINQ  MAGIC HERE !!!
-
-            return new CustomerDto[] { };
-        }
+            var query = customers.Where(c => c.Region==("WA"))
+                                 .Select(c => new CustomerDto()
+                                 {
+                                     CustomerId = c.CustomerID,
+                                     OrderCount = c.Orders.Length
+                                 });
+            return query;
+       }
 
         /// <summary>
         /// Finds all digits whose name is shorter than their value (index).
@@ -67,10 +62,7 @@ namespace LINQ
         public static IEnumerable<string> WhereIndexed()
         {
             string[] digits = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
-
-            // !!! INSERT YOUR LINQ  MAGIC HERE !!!
-
-            return new string[] { };
+            return digits.Where((d, index) => d.Length < index);          
         }
 
     }
